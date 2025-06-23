@@ -1,0 +1,368 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+
+/* Bu yerda boshqa stylinglar bo'lishi mumkin */
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Nuqtalar uchun */
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Suvib yuruvchi nuqtalar uchun container */
+.hero-background-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* orqa fon uchun */
+  overflow: hidden;
+}
+
+/* Har bir nuqta */
+.dot {
+  position: absolute;
+  background-color: rgba(
+    34,
+    211,
+    238,
+    0.3
+  ); 
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  animation: floatUp 20s linear infinite;
+}
+
+/* Animatsiya */
+@keyframes floatUp {
+  0% {
+    transform: translateY(100%) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-10%) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Tsparticles container */
+#tsparticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Hero.css qo‘shimchasi */
+.hero-particles-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none; /* Particles hover qilinsin, lekin kontent bloklanmasin */
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1440px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.744);
+  margin-bottom: 2rem;
+  animation: gradientShift 4s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.146),
+    transparent
+  );
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 6rem;
+    background: linear-gradient(
+      90deg,
+      #ff6b6b,
+      #feca57,
+      #1dd1a1,
+      #54a0ff,
+      #ff6b6b
+    );
+    background-size: 300% 100%;
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientTextReverse 8s linear infinite;
+  }
+}
+
+.hero-subtitle {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero-subtitle {
+    font-size: 3rem;
+    background: linear-gradient(
+      90deg,
+      #ff6b6b,
+      #feca57,
+      #1dd1a1,
+      #54a0ff,
+      #ff6b6b
+    );
+    background-size: 300% 100%;
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientTextReverse 6s linear infinite;
+  }
+}
+
+@keyframes gradientTextReverse {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0% 0;
+  }
+}
+
+.hero-description {
+  font-size: 21px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.hero-description span {
+  color: #22d3ee;
+  font-weight: 600;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 640px) {
+  .hero-buttons {
+    flex-direction: row;
+  }
+}
+
+.hero-button-primary {
+  background: white;
+  color: #111827;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.hero-button-primary:hover {
+  background: #111827;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.hero-button-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.hero-button-secondary:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+
+.hero-icons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .hero-icons {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.icon-container {
+  width: 4rem;
+  height: 4rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.icon-container:hover {
+  transform: scale(1.1) translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.icon-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .hero-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 28px;
+  font-weight: bold;
+  background: linear-gradient(
+    90deg,
+    #ff6b6b,
+    #feca57,
+    #1dd1a1,
+    #54a0ff,
+    #ff6b6b
+  );
+  background-size: 300% 100%;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientTextReverse 6s linear infinite;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 20px;
+}

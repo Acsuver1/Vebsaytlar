@@ -1,0 +1,140 @@
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.8); }
+}
+
+.elements-section {
+  background-color: white;
+  padding: 5rem 1rem;
+}
+
+.elements-container {
+  max-width: 96rem;
+  margin: 0 auto;
+}
+
+.elements-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.elements-count-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.elements-count {
+  font-size: 7rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.elements-count span {
+  color: #8b5cf6;
+}
+
+.elements-count-shadow {
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  font-size: 6rem;
+  font-weight: bold;
+  color: #f3f4f6;
+  z-index: 0;
+}
+
+.elements-header h2,
+.elements-header h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.elements-header p {
+  max-width: 40rem;
+  margin: 1rem auto 0;
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.elements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .elements-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .elements-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.element-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.element-card:hover {
+  background-color: #eff6ff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+@keyframes glow {
+  0% { background-color: #f9fafb; }
+  50% { background-color: var(--glow-color); box-shadow: 0 0 10px var(--glow-color); }
+  100% { background-color: #f9fafb; }
+}
+
+
+/* Icon ichidagi rang va animatsiya */
+.element-icon {
+  animation: fadeInOut 3s infinite;
+  margin-bottom: 0.75rem;
+}
+
+/* Icon hover rang */
+.element-card:hover .element-icon {
+  transform: scale(1.1);
+}
+
+
+.element-card:nth-child(6n+6) .element-icon { color: #ef4444; }
+.element-card:nth-child(6n+5) .element-icon { color: #f59e0b; }
+.element-card:nth-child(6n+4) .element-icon { color: #10b981; }
+.element-card:nth-child(6n+3) .element-icon { color: #3b82f6; }
+.element-card:nth-child(6n+2) .element-icon { color: #8b5cf6; }
+.element-card:nth-child(6n+1) .element-icon { color: #ec4899; }
+
+.element-card span {
+  font-size: 1rem;
+  text-align: center;
+  color: #374151;
+  font-weight: 500;
+}
+
+/* fadeInOut animatsiya */
+@keyframes fadeInOut {
+  0% { opacity: 0.5; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.5; transform: scale(0.9); }
+}

@@ -1,0 +1,60 @@
+.order-section {
+  background-color: #5ac8e2;
+  color: white;
+  padding: 100px 20px;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.order-content {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.order-title {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.order-subtitle {
+  font-size: 2.8rem;
+  margin-bottom: 1.2rem;
+  font-weight: 400;
+}
+
+.order-description {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #e6f7fa;
+}
+
+.order-button {
+  background-color: white;
+  color: #222;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.order-button:hover {
+  background-color: #f2f2f2;
+}
+
+.order-bg-text {
+  position: absolute;
+  font-size: 10rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.07);
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 1;
+}
