@@ -9,13 +9,16 @@ import {
   Database,
   BarChart3
 } from 'lucide-react';
+
+
 import './Services.css'; // CSS faylini import qilish
 
 interface ServiceItem {
-  icon: JSX.Element;
+  icon: React.ReactElement;
   title: string;
   description: string;
 }
+
 
 const ServicesComponent: React.FC = () => {
   const services: ServiceItem[] = [

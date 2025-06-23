@@ -44,7 +44,7 @@ export const Cart: React.FC<CartProps> = ({
             <div className="cart-item-list">
               {items.map((item) => (
                 <div key={item.id} className="cart-item">
-                  <img src={item.image} alt={item.name} />
+                  <img src={item.images} alt={item.name} />
                   <div className="cart-item-info">
                     <h3>{item.name}</h3>
                     <p>${item.price}</p>

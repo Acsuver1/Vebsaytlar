@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Header } from './components/Header/Header';
 import { Hero } from './components/Hero/Hero';
 import { TemplateGrid } from './components/TemplateGrid/TemplateGrid';
 import { Cart } from './components/Cart/Cart';
 import { TemplateModal } from './components/TemplateGrid/TemplateModal';
 import Services from './components/Services/Services';
-import Elemnts from './components/Elements/Elements';
+import Elements from './components/Elements/Elements';
 import Feedback from './components/Feedback/Feedback';
 import  Footer  from './components/Footer/Footer';
 import { templates, categories } from './data/templates';
@@ -95,7 +95,7 @@ function App() {
       <Services />
 
       {/* Elements */}
-      <Elemnts />
+      <Elements />
 
       {/* Feedback */}
       <Feedback />

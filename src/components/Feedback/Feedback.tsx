@@ -1,5 +1,5 @@
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import './Feedback.css';
 
 const TestimonialSection = () => {
@@ -48,7 +48,7 @@ const TestimonialSection = () => {
     );
   };
 
-  const goToSlide = (index) => {
+  const goToSlide = (index: number) => {
     setCurrentIndex(index);
   };
 
